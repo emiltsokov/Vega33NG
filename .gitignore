@@ -1,5 +1,7 @@
 node_modules
 bower_components
+dist
+test
 .DS_Store
 .DS_Store?
 ._*

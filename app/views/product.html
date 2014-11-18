@@ -1,0 +1,16 @@
+<div class="product-wrap">
+<a href="#">Всички продукти</a>
+<h1>{{curProduct.name}}</h1>
+<aside>
+  <dl>
+      <dt>Код</dt>
+      <dd>{{curProduct.code}}</dd>
+      <dt>Информация за формуляра</dt>
+      <dd>{{curProduct.desc}}</dd>
+      <dt>Цена на дребно</dt>
+      <dd>{{curProduct.price}} лв.</dd>
+    </dl>
+    <a href="mailto:info@vega33.com?subject=Запитване за {{curProduct.name}} {{curProduct.code}}&body=Запитване за {{curProduct.name}} {{curProduct.code}}">Изпрати запитване за продукт</a>
+</aside>
+<img ng-src="{{curProduct.full_img}}" />
+</div>
