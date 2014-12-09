@@ -6,9 +6,9 @@
  * @description
  * # ProductCData
  * Controller of the localApp
- */
+
 angular.factory('productDataService', function ($q, $timeout) {
-    return { 
+    return {
         data : {},
         load : function(id) {
             var defer = $q.defer();
@@ -20,4 +20,4 @@ angular.factory('productDataService', function ($q, $timeout) {
             return defer.promise;
         }
     };
-});
+}); */

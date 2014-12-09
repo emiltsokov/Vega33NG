@@ -2,8 +2,13 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+@import "_bootstrap-vega.scss";
+
+@import "_variables.scss";
 
 $vegacolor: #006D66;
+$brand-primary:         #006D66 !default;
+
 
 h1, h2, h3, a, a:hover, dt {
   color: $vegacolor;
@@ -38,7 +43,7 @@ body {
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
-    margin-top: 0;
+    margin-top: 9px;
     margin-bottom: 0;
   }
   a {
@@ -179,6 +184,7 @@ body {
   }
   iframe {
     width: 900px;
-    height: 300px
+    height: 300px;
+    max-width: 100%;
   }
 }

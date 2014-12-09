@@ -186,7 +186,7 @@ module.exports = function (grunt) {
         httpGeneratedImagesPath: '/images/generated',
         httpFontsPath: '/styles/fonts',
         relativeAssets: false,
-        assetCacheBuster: false,
+        assetCacheBuster: true,
         raw: 'Sass::Script::Number.precision = 10\n'
       },
       dist: {
@@ -341,7 +341,8 @@ module.exports = function (grunt) {
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'fonts/*'
+            'fonts/*',
+            'data/*'
           ]
         }, {
           expand: true,
@@ -435,7 +436,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     // 'newer:jshint',
-    'test',
+    // 'test',
     'build'
   ]);
 };

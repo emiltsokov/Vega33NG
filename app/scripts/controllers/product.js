@@ -8,12 +8,8 @@
  * Controller of the localApp
  */
 angular.module('localApp')
-  .controller('ProductCtrl', function ($scope, $route) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ProductCtrl',["$scope","$route", function ($scope, $route) {
+
     // console.log($scope.products);
     // console.log($scope.products[2].id, $route.current.params.product);
     // console.log("found:", $scope.products.indexOf($route.current.params.product) != -1);
@@ -23,4 +19,4 @@ angular.module('localApp')
     $scope.curProduct = curProducts[0];
     // console.log($scope.curProduct);
 
-  });
+  }]);

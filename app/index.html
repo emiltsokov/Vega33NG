@@ -1,8 +1,8 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" ng-app="localApp">
   <head>
     <meta charset="utf-8">
-    <title>Формуляри, каталог формуляри, поръчка на фактури, Вега-33 ООД</title>
+    <title>{{curProduct.name}} Формуляри, каталог формуляри, поръчка на фактури, Вега-33 ООД</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="localApp">
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -30,7 +30,7 @@
           <li ng-class="{'active': $route.current.activePage == 'news'}"><a ng-href="#/news">Новини</a></li>
           <li ng-class="{'active': $route.current.activePage == 'contact'}"><a ng-href="#/contact">Контакт</a></li>
         </ul>
-        <h3 class="text-muted">Лого</h3>
+        <h3 class="text-muted"><img src="images/vega33.png" alt="Вега-33  "></h3>
       </div>
     </div>
 
@@ -77,11 +77,8 @@
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <!-- endbower -->
     <!-- endbuild -->

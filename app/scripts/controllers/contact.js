@@ -8,10 +8,6 @@
  * Controller of the localApp
  */
 angular.module('localApp')
-  .controller('ContactCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('ContactCtrl',["$scope", function ($scope) {
+
+  }]);
