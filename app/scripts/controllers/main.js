@@ -37,7 +37,7 @@ angular.module('localApp')
 
 
   // getProducts($scope, $http);
-  $http.get('../../data/products.json').
+  $http.get('../data/products.json').
     success(function(data, status, headers, config) {
       // this callback will be called asynchronously
       // when the response is available
@@ -54,7 +54,7 @@ angular.module('localApp')
     return {
       restrict: 'EA',
       scope: true,
-      templateUrl: '../views/products-list.html'
+      templateUrl: 'views/products-list.html'
     };
   })
   .filter('searchFor', function(){

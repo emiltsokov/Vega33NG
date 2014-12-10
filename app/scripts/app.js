@@ -50,7 +50,6 @@ angular
         activePage: 'product',
         resolve: function($scope){
           $scope.getProducts($scope, $http);
-          console.log('das');
         }
 
       })
