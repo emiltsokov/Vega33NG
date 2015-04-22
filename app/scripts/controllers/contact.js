@@ -1,13 +1,4 @@
 'use strict';
-
-/**
- * @ngdoc function
- * @name localApp.controller:ContactCtrl
- * @description
- * # AboutCtrl
- * Controller of the localApp
- */
-angular.module('localApp')
-  .controller('ContactCtrl',["$scope", function ($scope) {
-
-  }]);
+ VEGAWEB
+.controller('ContactCtrl',["$scope","$http","$route","navService", function ($scope, $http, $route, navService) {
+}]);

@@ -1,13 +1,10 @@
 'use strict';
-
-/**
- * @ngdoc function
- * @name localApp.controller:NewsCtrl
- * @description
- * # NewsCtrl
- * Controller of the localApp
- */
-angular.module('localApp')
-  .controller('NewsCtrl',["$scope", function ($scope) {
-
-  }]);
+VEGAWEB
+ .controller('NewsCtrl',["$scope","$http","$route","navService", function ($scope, $http, $route, navService) {
+    $http.get('../data/news.json').
+    success(function(data, status, headers, config) {
+      $scope.news = data;
+    }).
+    error(function(data, status, headers, config) {
+    });
+}])

@@ -1,38 +1,14 @@
-<!-- <h1>Всички продукти</h1> -->
-
 <fieldset class="product-search">
-    <p><input type="text" class="ico-search" placeholder="Търсене" ng-model="searchString" /></p>
-
-
-<!--     <select ng-model="selectedCat" ng-init="selectedCat = selectedCat || category[0].id" ng-options="category.id as category.name for category in categories" ng-change="catSelected({{selectedCat}})">
-    <option value="">Всички продукти</option>
-    </select>
-    <pre>{{selectedCat}}</pre>
--->
-   <!--  <select ng-model="categories" ng-show="!categories.item">
-      <option ng-repeat="cat in categories">{{ cat.name }}</option>
-    </select>
-
-    <select
-    ng-model="categories"
-    ng-options="value.id as value.label group by value.name for value in myOptions">
-    <option>--</option>
-    </select>
- -->
-
+    <div class="field">
+        <input type="text" id="input-search" class="ico-search" ng-model="searchString" pattern=".{1,}" required />
+        <label for="input-search">Търсене</label>
+    </div>
 </fieldset>
 <ul class="product-list">
-    <li ng-repeat="product in products | searchFor:searchString | filterByCategory:filteredCategory">
+    <li ng-repeat="product in products | searchFor:searchString">
         <a href="#/product/{{product.id}}"><img ng-src="{{product.tbn_img}}" /></a>
-        <!-- <br> -->
-        <!-- {{product.id}} -->
-        <!-- <br> -->
-        <!-- {{product.code}} -->
-        <!-- <br> -->
-        <!-- {{product.desc}} -->
         <br>
         <a href="#/product/{{product.id}}">{{product.name}}</a>
-
     </li>
 </ul>
 <p class="search-msg hidden">Няма намерени продукти. <span> Използвайте кирилица, за да търсите по име на формуляр!</span></p>

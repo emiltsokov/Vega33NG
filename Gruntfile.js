@@ -1,4 +1,7 @@
 // Generated on 2014-10-23 using generator-angular 0.9.8
+
+
+
 'use strict';
 
 // # Globbing
@@ -9,13 +12,13 @@
 
 module.exports = function (grunt) {
 
+  // Time how long tasks take. Can help when optimizing build times
+  require('time-grunt')(grunt);  
+    
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
-  // Time how long tasks take. Can help when optimizing build times
-  require('time-grunt')(grunt);
-
-  // Configurable paths for the application
+// Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
@@ -35,7 +38,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all'],
+        // tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -44,12 +47,20 @@ module.exports = function (grunt) {
       //   files: ['test/spec/{,*/}*.js'],
       //   tasks: ['newer:jshint:test', 'karma']
       // },
-      compass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer']
-      },
+      // compass: {
+      //   files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+      //   tasks: ['compass:server', 'autoprefixer']
+      // },
       gruntfile: {
         files: ['Gruntfile.js']
+      },
+      sass: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        tasks: ['sass:server', 'autoprefixer']
+      },
+      styles: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
+        tasks: ['newer:copy:styles', 'autoprefixer']
       },
       livereload: {
         options: {
@@ -86,22 +97,22 @@ module.exports = function (grunt) {
           }
         }
       },
-      test: {
-        options: {
-          port: 9002,
-          middleware: function (connect) {
-            return [
-              connect.static('.tmp'),
-              // connect.static('test'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
-              connect.static(appConfig.app)
-            ];
-          }
-        }
-      },
+      // test: {
+      //   options: {
+      //     port: 9002,
+      //     middleware: function (connect) {
+      //       return [
+      //         connect.static('.tmp'),
+      //         // connect.static('test'),
+      //         connect().use(
+      //           '/bower_components',
+      //           connect.static('./bower_components')
+      //         ),
+      //         connect.static(appConfig.app)
+      //       ];
+      //     }
+      //   }
+      // },
       dist: {
         options: {
           open: true,
@@ -129,7 +140,33 @@ module.exports = function (grunt) {
         src: ['test/spec/{,*/}*.js']
       }
     },
-
+    
+    // Compiles Sass to CSS and generates necessary files if requested
+    sass: {
+      options: {
+        sourceMap: true,
+        includePaths: ['bower_components'],
+        loadPath: 'bower_components'
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/styles',
+          src: ['*.{scss,sass}'],
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      },
+      server: {
+              files: [{
+                expand: true,
+                cwd: '<%= yeoman.app %>/styles',
+                src: ['*.{scss,sass}'],
+                dest: '.tmp/styles',
+                ext: '.css'
+              }]
+      }
+    },  
     // Empties folders to start fresh
     clean: {
       dist: {
@@ -367,25 +404,28 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'compass:server'
+        //'compass:server'
+        'sass:server'
+        //'copy:styles'
       ],
-      test: [
-        'compass'
-      ],
+      //test: [
+        //'compass'
+      //],
       dist: [
-        'compass:dist',
+        //'compass:dist',
+        'sass',
         'imagemin',
         'svgmin'
       ]
-    },
+    }
 
     // Test settings
-    karma: {
-      unit: {
-        configFile: 'test/karma.conf.js',
-        singleRun: true
-      }
-    }
+    // karma: {
+    //   unit: {
+    //     configFile: 'test/karma.conf.js',
+    //     singleRun: true
+    //   }
+    // }
   });
 
 

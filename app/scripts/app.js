@@ -1,11 +1,5 @@
 'use strict';
-
 /**
- * @ngdoc overview
- * @name localApp
- * @description
- * # localApp
- *
  * Main module of the application.
  */
 angular
@@ -49,7 +43,7 @@ angular
         controller: 'ProductCtrl',
         activePage: 'product',
         resolve: function($scope){
-          $scope.getProducts($scope, $http);
+          // $scope.getProducts($scope, $http);
         }
 
       })

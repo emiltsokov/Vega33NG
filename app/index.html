@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>{{curProduct.name}} Формуляри, каталог формуляри, поръчка на фактури, Вега-33 ООД</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -41,22 +41,24 @@
     <!-- Add your site or application content here -->
     <div class="header">
       <div class="container">
-
-        <ul class="nav nav-pills pull-right" ng-controller="navCtrl">
-          <li ng-class="{'active': $route.current.activePage == 'home'}" ><a ng-href="#">Формуляри Вега-33</a></li>
-          <li ng-class="{'active': $route.current.activePage == 'about'}"><a ng-href="#/about">За Вега-33</a></li>
-          <li ng-class="{'active': $route.current.activePage == 'news'}"><a ng-href="#/news">Новини</a></li>
-          <li ng-class="{'active': $route.current.activePage == 'contact'}"><a ng-href="#/contact">Контакт</a></li>
-        </ul>
-        <h3 class="text-muted"><img src="images/vega33.png" alt="Вега-33  "></h3>
+        <div class="nav-wrap">
+          <ul class="nav nav-pills pull-right" ng-controller="navCtrl">
+            <li ng-class="{'active': $route.current.activePage == 'home'}" ><a ng-href="#">Формуляри Вега-33</a></li>
+            <li ng-class="{'active': $route.current.activePage == 'about'}"><a ng-href="#/about">За Вега-33</a></li>
+            <li ng-class="{'active': $route.current.activePage == 'news'}"><a ng-href="#/news">Новини</a></li>
+            <li ng-class="{'active': $route.current.activePage == 'contact'}"><a ng-href="#/contact">Контакт</a></li>
+          </ul>
+        </div>
+        <h3 class="text-muted"><a href="/"><img src="images/vega33.png" alt="Вега-33  "></a></h3>
       </div>
+      <div class="mobile-nav-toggle"><span></span></div>
     </div>
 
     <div class="container">
-      <div ng-view="" ng-controller="MainCtrl"> </div>
-
+      <div ng-view=""> </div>
+<!--  ng-controller="MainCtrl" -->
       <div class="footer">
-        <p>&copy; Copyright</p>
+        <p>&copy; Copyright 2015 Вега-33 <a href="http://beweb.bg">уеб дизайн http://beweb.bg</a></p>
       </div>
     </div>
 
@@ -101,13 +103,14 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/contact.js"></script>
-        <script src="scripts/controllers/product.js"></script>
-        <script src="scripts/controllers/news.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/services/navService.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/contact.js"></script>
+    <script src="scripts/controllers/product.js"></script>
+    <script src="scripts/controllers/news.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

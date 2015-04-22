@@ -1,1 +1,7 @@
-<p>This is the news view.</p>
+<ul class="news-list">
+    <li ng-repeat="news in news">
+        <h2>{{news.title}}</h2>
+        <span class="date">{{news.date}}</span>
+        <div class="body">{{news.body}}</div>
+    </li>
+</ul>

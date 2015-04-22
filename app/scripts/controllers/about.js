@@ -8,6 +8,6 @@
  * Controller of the localApp
  */
 angular.module('localApp')
-  .controller('AboutCtrl',["$scope", function ($scope) {
+  .controller('AboutCtrl',["$scope","$http","$route","navService", function ($scope, $http, $route, navService) {
 
   }]);

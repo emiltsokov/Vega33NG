@@ -1,22 +1,17 @@
 'use strict';
+VEGAWEB
+  .controller('ProductCtrl',["$scope","$http","$route","navService", function ($scope, $http, $route, navService) {
 
-/**
- * @ngdoc function
- * @name localApp.controller:ProductCtrl
- * @description
- * # ProductCtrl
- * Controller of the localApp
- */
-angular.module('localApp')
-  .controller('ProductCtrl',["$scope","$route", function ($scope, $route) {
-
-    // console.log($scope.products);
-    // console.log($scope.products[2].id, $route.current.params.product);
-    // console.log("found:", $scope.products.indexOf($route.current.params.product) != -1);
-    var curProducts = $scope.products.filter(function(item){
-        return item.id === $route.current.params.product;
-    });
-    $scope.curProduct = curProducts[0];
-    // console.log($scope.curProduct);
+    $http.get('../data/products.json').
+        success(function(data, status, headers, config) {
+          $scope.products = data;
+          var curProducts = $scope.products.filter(function(item){
+              return item.id === $route.current.params.product;
+          });
+          $scope.curProduct = curProducts[0];
+          
+        }).
+        error(function(data, status, headers, config) {
+        });
 
   }]);
