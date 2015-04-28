@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{curProduct.name}} Формуляри, каталог формуляри, поръчка на фактури, Вега-33 ООД</title>
-    <meta name="description" content="">
+    <meta name="description" content="Формуляри, каталог формуляри, производство на формуляри, Вега-33 ООД">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -37,42 +37,42 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="container">
-        <div class="nav-wrap">
-          <ul class="nav nav-pills pull-right" ng-controller="navCtrl">
-            <li ng-class="{'active': $route.current.activePage == 'home'}" ><a ng-href="#">Формуляри Вега-33</a></li>
-            <li ng-class="{'active': $route.current.activePage == 'about'}"><a ng-href="#/about">За Вега-33</a></li>
-            <li ng-class="{'active': $route.current.activePage == 'news'}"><a ng-href="#/news">Новини</a></li>
-            <li ng-class="{'active': $route.current.activePage == 'contact'}"><a ng-href="#/contact">Контакт</a></li>
-          </ul>
+    <div class="wrapper">
+      <!-- Add your site or application content here -->
+      <div class="header">
+        <div class="container">
+          <div class="nav-wrap">
+            <ul class="nav nav-pills pull-right" ng-controller="navCtrl">
+              <li ng-class="{'active': $route.current.activePage == 'home'}" ><a ng-href="#">Формуляри Вега-33</a></li>
+              <li ng-class="{'active': $route.current.activePage == 'about'}"><a ng-href="#/about">За Вега-33</a></li>
+              <li ng-class="{'active': $route.current.activePage == 'news'}"><a ng-href="#/news">Новини</a></li>
+              <li ng-class="{'active': $route.current.activePage == 'contact'}"><a ng-href="#/contact">Контакт</a></li>
+            </ul>
+          </div>
+          <h3 class="text-muted"><a href="/"><img src="images/vega33.png" alt="Вега-33  "></a></h3>
         </div>
-        <h3 class="text-muted"><a href="/"><img src="images/vega33.png" alt="Вега-33  "></a></h3>
+        <div class="mobile-nav-toggle"><span></span></div>
       </div>
-      <div class="mobile-nav-toggle"><span></span></div>
-    </div>
 
-    <div class="container">
-      <div ng-view=""> </div>
-<!--  ng-controller="MainCtrl" -->
-      <div class="footer">
-        <p>&copy; Copyright 2015 Вега-33 <a href="http://beweb.bg">уеб дизайн http://beweb.bg</a></p>
+      <div class="container">
+        <div ng-view=""> </div>
+  <!--  ng-controller="MainCtrl" -->
+        <div class="footer">
+          <p>&copy; Copyright 2015 Вега-33 <a href="http://beweb.bg">уеб дизайн http://beweb.bg</a> <a href="http://vega33.com">Вега-33 стар сайт</a></p>
+        </div>
       </div>
     </div>
-
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <!--  <script>
+     <script>
        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
+       ga('create', 'UA-62314119-1');
        ga('send', 'pageview');
-    </script> -->
+    </script>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
